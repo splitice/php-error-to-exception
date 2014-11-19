@@ -20,7 +20,7 @@ class ErrorToException {
      * @param int $errors
      * @param string $exception
      */
-    private static function handle($functor, $validation_function = null, $errors = -1, $exception = '\\ErrorException'){
+    public static function handle($functor, $validation_function = null, $errors = -1, $exception = '\\ErrorException'){
         if($errors == -1){
             $errors = self::DEFAULT_ERRORS;
         }
@@ -37,6 +37,8 @@ class ErrorToException {
                         throw $ex;
                     }
                 }
+
+                return true;
             }
 
 
