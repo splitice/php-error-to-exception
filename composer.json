@@ -1,15 +1,14 @@
 {
-  "name" : "splitice/radical-errorhandling",
-  "description" : "Error Handling for the Radical-PHP framework",
+  "name" : "splitice/error-to-exception",
+  "description" : "Error to Exception translation helper",
   "require" : {
-    "php" : ">=5.4",
-    "splitice/radical-common" : "*"
+    "php" : ">=5.4"
   },
-  "keywords" : [ "radical-php" ],
+  "keywords" : [ ],
   "minimum-stability" : "dev",
   "autoload" : {
     "psr-0" : {
-      "Radical" : "src"
+      "Splitice" : "src"
     }
   },
   "license" : "BSD",
