@@ -1,0 +1,17 @@
+{
+  "name" : "splitice/radical-errorhandling",
+  "description" : "Error Handling for the Radical-PHP framework",
+  "require" : {
+    "php" : ">=5.4",
+    "splitice/radical-common" : "*"
+  },
+  "keywords" : [ "radical-php" ],
+  "minimum-stability" : "dev",
+  "autoload" : {
+    "psr-0" : {
+      "Radical" : "src"
+    }
+  },
+  "license" : "BSD",
+  "type" : "library"
+}
