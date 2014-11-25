@@ -59,5 +59,7 @@ class ErrorToException {
         }
 
         restore_error_handler();
+
+        return $result;
     }
 }
