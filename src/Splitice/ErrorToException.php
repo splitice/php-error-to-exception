@@ -33,7 +33,7 @@ class ErrorToException {
 
                 //Is error, we need to do something now
                 if($errno & (E_USER_ERROR | E_ERROR | E_COMPILE_ERROR | E_CORE_ERROR | E_RECOVERABLE_ERROR)){
-                    if($validation_function == NULL || $validation_function($result)){
+                    if($validation_function == NULL || $validation_function($ex)){
                         throw $ex;
                     }
                 }
@@ -42,7 +42,7 @@ class ErrorToException {
             }
 
 
-            if($previous_handler == NULL){
+            if($previous_handler == NULL || !is_callable($previous_handler)){
                 return false;
             }
             return $previous_handler($errno, $errstr, $errfile, $errline);
@@ -54,7 +54,7 @@ class ErrorToException {
 
         if($ex != null){
             if($validation_function == NULL || $validation_function($result)){
-                throw $ex;
+                if($ex instanceof \Throwable) throw $ex;
             }
         }
 
